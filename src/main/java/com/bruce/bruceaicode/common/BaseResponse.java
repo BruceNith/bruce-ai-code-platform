@@ -4,7 +4,12 @@ import com.bruce.bruceaicode.exception.ErrorCode;
 import lombok.Data;
 
 import java.io.Serializable;
-
+/**
+ * 通用返回类
+ *
+ * @param <T>
+ * @author Bruce
+ */
 @Data
 public class BaseResponse<T> implements Serializable {
 
