@@ -24,8 +24,8 @@ public class JsonConfig {
         module.addSerializer(Long.class, ToStringSerializer.instance);
         module.addSerializer(Long.TYPE, ToStringSerializer.instance);
         // integer
-        module.addSerializer(Integer.class, ToStringSerializer.instance);
-        module.addSerializer(Integer.TYPE, ToStringSerializer.instance);
+//        module.addSerializer(Integer.class, ToStringSerializer.instance);
+//        module.addSerializer(Integer.TYPE, ToStringSerializer.instance);
         objectMapper.registerModule(module);
         return objectMapper;
     }
