@@ -5,7 +5,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.bruce.bruceaicode.exception.BusinessException;
 import com.bruce.bruceaicode.exception.ErrorCode;
-import com.bruce.bruceaicode.model.dto.UserQueryRequest;
+import com.bruce.bruceaicode.model.dto.user.UserQueryRequest;
 import com.bruce.bruceaicode.model.enums.UserRoleEnum;
 import com.bruce.bruceaicode.model.vo.LoginUserVO;
 import com.bruce.bruceaicode.model.vo.UserVO;

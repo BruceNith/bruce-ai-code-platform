@@ -1,4 +1,4 @@
-package com.bruce.bruceaicode.model.dto;
+package com.bruce.bruceaicode.model.dto.user;
 
 import com.bruce.bruceaicode.common.PageRequest;
 import lombok.Data;

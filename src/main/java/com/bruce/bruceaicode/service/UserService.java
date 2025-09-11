@@ -1,6 +1,6 @@
 package com.bruce.bruceaicode.service;
 
-import com.bruce.bruceaicode.model.dto.UserQueryRequest;
+import com.bruce.bruceaicode.model.dto.user.UserQueryRequest;
 import com.bruce.bruceaicode.model.vo.LoginUserVO;
 import com.bruce.bruceaicode.model.vo.UserVO;
 import com.mybatisflex.core.query.QueryWrapper;
