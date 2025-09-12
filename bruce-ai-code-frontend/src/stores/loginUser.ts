@@ -13,23 +13,9 @@ export const useLoginUserStore = defineStore('loginUser', () => {
 
   // 获取登录用户信息
   async function fetchLoginUser() {
-    try {
-      const res = await getLoginUser()
-      console.log('用户信息:', res.data )
-      if (res.data.code === 0 && res.data.data) {
-        console.log('成功获取用户信息:', res.data.data)
-        loginUser.value = res.data.data
-      } else {
-        console.warn('获取用户信息失败，使用默认状态')
-        loginUser.value = {
-          userName: '未登录',
-        }
-      }
-    } catch (error) {
-      console.error('获取用户信息失败:', error)
-      loginUser.value = {
-        userName: '未登录',
-      }
+    const res = await getLoginUser()
+    if (res.data.code === 0 && res.data.data) {
+      loginUser.value = res.data.data
     }
   }
 

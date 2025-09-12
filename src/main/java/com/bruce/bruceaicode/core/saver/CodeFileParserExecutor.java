@@ -12,7 +12,7 @@ import com.bruce.bruceaicode.model.enums.CodeGenTypeEnum;
  *
  * @author yupi
  */
-public class CodeParserExecutor {
+public class CodeFileParserExecutor {
 
     private static final HtmlCodeParser htmlCodeParser = new HtmlCodeParser();
 
