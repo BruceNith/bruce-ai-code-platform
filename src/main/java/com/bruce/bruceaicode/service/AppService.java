@@ -1,5 +1,6 @@
 package com.bruce.bruceaicode.service;
 
+import com.bruce.bruceaicode.model.dto.app.AppAddRequest;
 import com.bruce.bruceaicode.model.dto.app.AppQueryRequest;
 import com.bruce.bruceaicode.model.entity.User;
 import com.bruce.bruceaicode.model.vo.AppVO;
@@ -16,6 +17,15 @@ import java.util.List;
  * @author <a href="https://github.com/BruceNith">bruce</a>
  */
 public interface AppService extends IService<App> {
+
+    /**
+     * 创建应用
+     *
+     * @param appAddRequest
+     * @param loginUser
+     * @return
+     */
+    Long createApp(AppAddRequest appAddRequest, User loginUser);
 
     /**
      * 通过对话生成代码
