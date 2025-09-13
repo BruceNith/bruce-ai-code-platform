@@ -1,6 +1,6 @@
 package com.bruce.bruceaicode.ai;
 
-import com.bruce.bruceaicode.ai.tools.FileWriteTool;
+import com.bruce.bruceaicode.ai.tools.*;
 import com.bruce.bruceaicode.exception.BusinessException;
 import com.bruce.bruceaicode.exception.ErrorCode;
 import com.bruce.bruceaicode.model.enums.CodeGenTypeEnum;
@@ -44,6 +44,8 @@ public class AiCodeGeneratorServiceFactory {
     @Resource
     private ChatHistoryService chatHistoryService;
 
+    @Resource
+    private ToolManager toolManager;
 
     /**
      * AI 服务实例缓存
@@ -98,8 +100,7 @@ public class AiCodeGeneratorServiceFactory {
             case VUE_PROJECT -> AiServices.builder(AiCodeGeneratorService.class)
                     .streamingChatModel(reasoningStreamingChatModel)
                     .chatMemoryProvider(memoryId -> chatMemory)
-                    .tools(new FileWriteTool())
-                    // 处理工具调用幻觉问题
+                    .tools( toolManager.getAllTools() )
                     .hallucinatedToolNameStrategy(toolExecutionRequest -> ToolExecutionResultMessage.from(
                             toolExecutionRequest, "Error: there is no tool called " + toolExecutionRequest.name()
                     ))
