@@ -45,6 +45,14 @@
             <artifactId>langchain4j</artifactId>
             <version>1.1.0</version>
         </dependency>
+
+        <!-- LangGraph4j Studio 现在问题多多 暂时不测试 -->
+        <dependency>
+            <groupId>org.bsc.langgraph4j</groupId>
+            <artifactId>langgraph4j-studio-springboot</artifactId>
+            <version>1.6.0-rc2</version>
+        </dependency>
+
         <!-- 接入DeepSeek -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
