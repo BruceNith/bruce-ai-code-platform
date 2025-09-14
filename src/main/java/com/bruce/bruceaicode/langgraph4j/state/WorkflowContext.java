@@ -1,5 +1,6 @@
 package com.bruce.bruceaicode.langgraph4j.state;
 
+import com.bruce.bruceaicode.langgraph4j.model.ImageCollectionPlan;
 import com.bruce.bruceaicode.langgraph4j.model.ImageResource;
 import com.bruce.bruceaicode.langgraph4j.model.QualityResult;
 import com.bruce.bruceaicode.model.enums.CodeGenTypeEnum;
@@ -74,6 +75,18 @@ public class WorkflowContext implements Serializable {
      */
     private QualityResult qualityResult;
 
+    /**
+     * 图片收集计划
+     */
+    private ImageCollectionPlan imageCollectionPlan;
+
+    /**
+     * 并发图片收集的中间结果字段
+     */
+    private List<ImageResource> contentImages;
+    private List<ImageResource> illustrations;
+    private List<ImageResource> diagrams;
+    private List<ImageResource> logos;
 
     /**
      * 错误信息
