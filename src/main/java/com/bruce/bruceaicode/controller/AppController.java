@@ -19,6 +19,8 @@ import com.bruce.bruceaicode.model.entity.App;
 import com.bruce.bruceaicode.model.entity.User;
 import com.bruce.bruceaicode.model.enums.CodeGenTypeEnum;
 import com.bruce.bruceaicode.model.vo.AppVO;
+import com.bruce.bruceaicode.ratelimte.annotation.RateLimit;
+import com.bruce.bruceaicode.ratelimte.enums.RateLimitType;
 import com.bruce.bruceaicode.service.AppService;
 import com.bruce.bruceaicode.service.ProjectDownloadService;
 import com.bruce.bruceaicode.service.UserService;
@@ -68,6 +70,7 @@ public class AppController {
      * @return 生成结果流
      */
     @GetMapping(value = "/chat/gen/code", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @RateLimit(limitType = RateLimitType.USER , rate = 5 , rateInterval = 60 , message = "AI 对话请求过于频繁，请稍后再试")
     public Flux<ServerSentEvent<String>> chatToGenCode(@RequestParam Long appId,
                                                        @RequestParam String message,
                                                        HttpServletRequest request) {
