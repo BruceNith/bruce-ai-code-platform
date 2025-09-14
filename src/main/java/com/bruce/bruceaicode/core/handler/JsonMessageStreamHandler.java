@@ -1,14 +1,11 @@
 package com.bruce.bruceaicode.core.handler;
 
-import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.bruce.bruceaicode.ai.model.message.*;
 import com.bruce.bruceaicode.ai.tools.BaseTool;
 import com.bruce.bruceaicode.ai.tools.ToolManager;
-import com.bruce.bruceaicode.constant.AppConstant;
-import com.bruce.bruceaicode.core.builder.VueProjectBuilder;
 import com.bruce.bruceaicode.model.entity.User;
 import com.bruce.bruceaicode.model.enums.ChatHistoryMessageTypeEnum;
 import com.bruce.bruceaicode.service.ChatHistoryService;
@@ -28,8 +25,7 @@ import java.util.Set;
 @Component
 public class JsonMessageStreamHandler {
 
-    @Resource
-    private VueProjectBuilder vueProjectBuilder;
+
 
     @Resource
     private ToolManager toolManager;
@@ -61,9 +57,7 @@ public class JsonMessageStreamHandler {
                     // 流式响应完成后，添加 AI 消息到对话历史
                     String aiResponse = chatHistoryStringBuilder.toString();
                     chatHistoryService.addChatMessage(appId, aiResponse, ChatHistoryMessageTypeEnum.AI.getValue(), loginUser.getId());
-                    // 异步构造 Vue 项目
-                    String projectPath = AppConstant.CODE_OUTPUT_ROOT_DIR + "/vue_project_" + appId;
-                    vueProjectBuilder.buildProjectAsync(projectPath);
+
                 })
                 .doOnError(error -> {
                     // 如果AI回复失败，也要记录错误消息

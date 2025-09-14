@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@EnableCaching
+@EnableCaching  // 支持 spring Data 缓存注解
 @SpringBootApplication(exclude = {RedisEmbeddingStoreAutoConfiguration.class})
 //@EnableAspectJAutoProxy(exposeProxy = true)     // 开启AOP 通过AOP对当前代理对象的访问，使得在业务中访问到当前的代理对象
 @MapperScan("com.bruce.bruceaicode.mapper")

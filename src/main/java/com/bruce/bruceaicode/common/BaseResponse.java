@@ -2,6 +2,7 @@ package com.bruce.bruceaicode.common;
 
 import com.bruce.bruceaicode.exception.ErrorCode;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 /**
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @author Bruce
  */
 @Data
+//@NoArgsConstructor  // 反序列化的参数 必须有无参构造函数
 public class BaseResponse<T> implements Serializable {
 
     private int code;
